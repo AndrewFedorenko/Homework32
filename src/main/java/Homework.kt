@@ -1,14 +1,18 @@
 package main.java
 
 fun main(){
-    val i:Int=5;
-    println("Pow " + i + " is " + i.pow())
+    val i:Int=3;
+    println("Pow " + i + " is " + i.pow(5.0))
     println("I can filter chars".filterChar('a', 'r', ' '))
 }
 
 // this function extends Int for power
-fun Int.pow(): Double {
-    return (this.toDouble()) * (this.toDouble())
+fun Int.pow(powVar: Double): Double {
+    var result: Double = 1.0;
+    for (i in 1..this){
+        result *= powVar
+    }
+    return result
 }
 
 // this function extends String for some char filtering
